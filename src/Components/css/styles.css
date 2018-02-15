@@ -1,0 +1,38 @@
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    background-color: aquamarine;
+    padding: 0px;
+}
+
+.searchFormContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+}
+
+.homeBox {
+    display: flex;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.footer {
+    background-color: aquamarine;
+}
+
+.searchPageRoot {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    overflow: hidden;
+    background-color: aliceblue;
+}
+.infoContainer {
+    display: flex;
+    flex-direction: row;
+}
