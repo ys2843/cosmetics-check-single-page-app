@@ -1,30 +1,33 @@
 import React from 'react'
 import {
     BrowserRouter as Router,
+    Switch,
     Route
 } from 'react-router-dom'
-import About from './Components/About'
-import Home from './Components/Home'
-import NavBar from './Components/NavBar'
+import About from './Components/NavPage/About'
+import Home from './Components/NavPage/Home'
+import NavBar from './Components/NavPage/NavBar'
 import './App.css'
-import Divider from 'material-ui/Divider';
-import Footer from "./Components/Footer";
+import Footer from "./Components/NavPage/Footer";
 import SearchPage from './Components/SearchPage/SearchPage'
-import NotFound from './Components/NotFound'
+import NotFound from './Components/NavPage/NotFound'
 
 const App = () =>
-    <Router className='router'>
+    <Router>
         <div className='box'>
             <NavBar/>
             <br/>
-            <Divider/>
+            <br/>
+            <br/>
             <br/>
             <div className='container'>
-                <Route exact path="/" component={Home}/>
-                <Route path="/about" component={About}/>
-                <Route path="/search/" component={SearchPage}/>
+                <Switch>
+                    <Route exact path="/" component={Home}/>
+                    <Route path="/about" component={About}/>
+                    <Route path="/search/" component={SearchPage}/>
+                    <Route component={NotFound}/>
+                </Switch>
             </div>
-            <br/>
             <Footer/>
         </div>
     </Router>

@@ -11,7 +11,6 @@ class ProductPres extends Component {
     componentDidMount() {
         const url = "http://localhost:5000/api/search/" + this.props.query
         this.props.fetchData(url)
-        console.log(this.props.query)
     }
 
     componentWillReceiveProps(nextProps) {
@@ -23,10 +22,8 @@ class ProductPres extends Component {
 
     render() {
         return (
-            <div>
-                <ProductContainer items={this.props.items} isLoading={this.props.isLoading}
-                                  hasErrored={this.props.hasErrored}/>
-            </div>
+            <ProductContainer items={this.props.items} isLoading={this.props.isLoading}
+                              hasErrored={this.props.hasErrored}/>
         )
     }
 }

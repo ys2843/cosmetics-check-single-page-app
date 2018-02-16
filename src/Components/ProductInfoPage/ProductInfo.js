@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Dialog, {DialogTitle, DialogContent} from 'material-ui/Dialog';
-import './css/styles.css'
+import Dialog, {DialogContent} from 'material-ui/Dialog';
+import '../css/styles.css'
 import Typography from 'material-ui/Typography'
 import ProductInfoTab from './ProductInfoTab'
 
@@ -16,7 +16,7 @@ class ProductInfo extends React.Component {
                 <DialogContent>
                     <div>
                         <div className="infoContainer">
-                            <img src={imageUrl} width={window.innerWidth / 5} height={window.innerWidth / 5}/>
+                            <img src={imageUrl} width={window.innerWidth / 5} height={window.innerWidth / 5} alt="Product"/>
                             <div>
                                 <br/>
                                 <Typography variant="headline">

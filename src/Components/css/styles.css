@@ -1,8 +1,7 @@
 .navbar {
     display: flex;
     justify-content: flex-start;
-    background-color: aquamarine;
-    padding: 0px;
+    background-color: lightpink;
 }
 
 .searchFormContainer {
@@ -14,15 +13,19 @@
 
 .homeBox {
     display: flex;
-}
+    flex-direction: column;
+    justify-items: center;
 
-.container {
-    display: flex;
-    justify-content: center;
 }
 
 .footer {
-    background-color: aquamarine;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    background-color: lightpink;
 }
 
 .searchPageRoot {
@@ -30,8 +33,9 @@
     flex-wrap: wrap;
     justify-content: space-around;
     overflow: hidden;
-    background-color: aliceblue;
+    background-color: cornsilk;
 }
+
 .infoContainer {
     display: flex;
     flex-direction: row;

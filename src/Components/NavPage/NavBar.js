@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import './css/styles.css'
+import '../css/styles.css'
 import Button from 'material-ui/Button';
 
 

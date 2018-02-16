@@ -1,11 +1,10 @@
 import React from 'react'
 import '../css/styles.css'
 import SearchTextField from './SearchTextField'
-import {sendQuery, itemsIsLoading} from "../../redux/actions/query";
+import {sendQuery} from "../../redux/actions/query";
 import Button from 'material-ui/Button';
 import {Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
-import PropTypes from 'prop-types'
 
 class SearchForm extends React.Component {
     constructor(props) {
@@ -31,18 +30,17 @@ class SearchForm extends React.Component {
         this.setState({
             value: event.target.value
         })
-        this.props.dispatch(itemsIsLoading(true))
     }
 
     render() {
-        const {value, fireRedirect} = this.state
+        const {fireRedirect} = this.state
         return (
             <div>
                 <form
                     onSubmit={this.handleSubmit}>
                     <div className='searchFormContainer'>
                         <SearchTextField onChange={this.handleOnChange}/>
-                        <Button type='submit'>Search</Button>
+                        <Button variant="raised" type='submit'>Search</Button>
                     </div>
                 </form>
                 {
