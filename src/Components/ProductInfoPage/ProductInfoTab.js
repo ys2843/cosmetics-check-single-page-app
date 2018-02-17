@@ -22,8 +22,11 @@ TabContainer.propTypes = {
 const styles = theme => ({
     root: {
         backgroundColor: theme.palette.background.paper,
-        width: 500,
+        width: '100%',
     },
+    swipeView: {
+        maxHeight: window.innerHeight / 4,
+    }
 });
 
 class FullWidthTabs extends React.Component {
@@ -63,13 +66,31 @@ class FullWidthTabs extends React.Component {
                 >
                     <TabContainer dir={theme.direction}>
                         <div>
+                            {
+                                itemInfo.is_safe &&
+                                <Typography variant="body1" gutterBottom={true}>
+                                    This Product is SAFE for pregnant women to use.
+                                </Typography>
+                            }
+                            {
+
+                                !itemInfo.is_safe &&
+                                <Typography variant="body1" gutterBottom={true}>
+                                    This Product is UNSAFE for pregnant women to use.
+                                </Typography>
+                            }
+                            {
+                                <Typography variant="body1" gutterBottom={true}>
+                                    It contains harmful ingredients: {itemInfo.unsafe_ingredients}
+                                </Typography>
+                            }
                             <Typography variant="body1">
                                 <a href={itemInfo.url}>Product Entry</a>
                             </Typography>
                         </div>
                     </TabContainer>
                     <TabContainer dir={theme.direction}>
-                        <div>
+                        <div className={classes.swipeView}>
                             <Typography variant="body1">
                                 {itemInfo.ingredients}
                             </Typography>

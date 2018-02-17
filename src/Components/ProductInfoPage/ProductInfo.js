@@ -13,27 +13,29 @@ class ProductInfo extends React.Component {
         const imageUrl = 'https://' + item.image
         return (
             <Dialog aria-labelledby="simple-dialog-title" open={open} onClose={onClose}>
-                <DialogContent>
-                    <div>
-                        <div className="infoContainer">
-                            <img src={imageUrl} width={window.innerWidth / 5} height={window.innerWidth / 5} alt="Product"/>
-                            <div>
-                                <br/>
-                                <Typography variant="headline">
-                                    {item.category}
+                <DialogContent className="dialogContainer">
+                    <div className="infoContainer">
+                        <img src={imageUrl} width={window.innerWidth / 6} height={window.innerWidth / 6}
+                             alt="Product"/>
+                        <div className="productInfoTextContainer">
+                            <Typography variant="title">
+                                {item.category}
+                            </Typography>
+                            {
+                                item.sub_category !== item.category &&
+                                <Typography variant="subheading">
+                                    {item.sub_category}
                                 </Typography>
-                                <br/>
-                                <Typography variant="headline">
-                                    {item.name}
-                                </Typography>
-                                <br/>
-                            </div>
-                        </div>
-
-                        <div>
-                            <ProductInfoTab itemInfo={item}/>
+                            }
+                            <Typography variant="body1">
+                                {item.name}
+                            </Typography>
+                            <Typography variant="body1">
+                                {item.price}
+                            </Typography>
                         </div>
                     </div>
+                    <ProductInfoTab itemInfo={item}/>
                 </DialogContent>
             </Dialog>
         );
@@ -41,7 +43,10 @@ class ProductInfo extends React.Component {
 }
 
 ProductInfo.propTypes = {
-    item: PropTypes.object.isRequired
+    item: PropTypes.object.isRequired,
+    open: PropTypes.bool,
+    onClose: PropTypes.func
+
 };
 
 export default ProductInfo

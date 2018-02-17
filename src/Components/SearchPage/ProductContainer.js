@@ -1,49 +1,52 @@
 import React, {Component} from 'react'
 import '../css/styles.css'
+import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
-import Product from './Product'
-import GridList, {GridListTile} from 'material-ui/GridList';
-import {LinearProgress} from 'material-ui/Progress';
-import Subheader from 'material-ui/List/ListSubheader';
+import {query} from "../../redux/actions/query"
+import ProductPres from './ProductPres'
+
 
 class ProductContainer extends Component {
 
+    componentDidMount() {
+        const url = "http://localhost:5000/api/search/" + this.props.query
+        this.props.fetchData(url)
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (this.props.query !== nextProps.query) {
+            const url = "http://localhost:5000/api/search/" + nextProps.query
+            this.props.fetchData(url)
+        }
+    }
+
     render() {
-
-        const {items, hasErrored, isLoading} = this.props
-
-        if (hasErrored) {
-            return <p>Sorry! There is an error loading the items</p>
-        }
-        if (isLoading) {
-            return <LinearProgress color="secondary" variant="query"/>
-        }
         return (
-            <div className='searchPageRoot'>
-                <GridList cellHeight={180} style={{width: window.innerWidth * 2 / 3}} cols={4}>
-                    <GridListTile cols={4} style={{height: 'auto'}}>
-                        <Subheader component='div'>Product</Subheader>
-                    </GridListTile>
-                    {
-                        items.map(
-                            item => (
-                                <GridListTile key={item.url} style={{height: 'auto'}}>
-                                    <Product itemInfo={item}/>
-                                </GridListTile>
-                            )
-                        )
-                    }
-                </GridList>
-            </div>
+            <ProductPres items={this.props.items} isLoading={this.props.isLoading}
+                              hasErrored={this.props.hasErrored} result={this.props.query}/>
         )
     }
 }
 
-ProductContainer.propTypes = {
-    items: PropTypes.array,
+ProductPres.propTypes = {
+    items: PropTypes.array.isRequired,
     hasErrored: PropTypes.bool,
     isLoading: PropTypes.bool
 }
 
+function mapStateToProps(state) {
+    return {
+        query: state.updateQuery,
+        items: state.items,
+        hasErrored: state.itemsHasErrored,
+        isLoading: state.itemsIsLoading
+    }
+}
 
-export default ProductContainer
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchData: (url) => dispatch(query(url))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductContainer)

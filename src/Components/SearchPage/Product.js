@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Card, {CardActions, CardContent, CardMedia} from 'material-ui/Card';
-import Button from 'material-ui/Button';
+import Card, {CardContent, CardMedia} from 'material-ui/Card';
+import Button from 'material-ui/ButtonBase';
 import Typography from 'material-ui/Typography';
 import Avatar from 'material-ui/Avatar';
 import ProductInfo from '../ProductInfoPage/ProductInfo'
@@ -31,36 +31,34 @@ class Product extends React.Component {
     render() {
         const imageUrl = 'https://' + this.props.itemInfo.image
         return (
-            <div>
-                <Card style={{width: window.innerWidth / 6}}>
-                    <CardMedia
-                        style={{height: window.innerWidth / 6}}
-                        image={imageUrl}
-                        title="Product Image"
-                    />
-                    <CardContent style={{height: 80}}>
-                        <Typography variant="headline" component="h6">
-                            {this.props.itemInfo.brand}
-                        </Typography>
-                        <Typography component="p">
-                            {this.props.itemInfo.name}
-                        </Typography>
-                    </CardContent>
-
-                    <CardActions>
-                        <Button size="small" color="primary" onClick={this.handleClickOpen}>
-                            Details
-                        </Button>
-                        {!this.props.itemInfo.is_safe && <Avatar style={{
-                            margin: 10,
-                            backgroundColor: '#ff0000',
-                            width: 20,
-                            height: 20
-                        }}>!</Avatar>}
-                    </CardActions>
-                </Card>
-                <ProductInfo open={this.state.open} onClose={this.handleClose} item={this.props.itemInfo}/>
-            </div>
+            <Card style={{paddingTop: 15, width: window.innerWidth / 7}} elevation={0}>
+                <CardMedia
+                    style={{height: window.innerWidth / 7}}
+                    image={imageUrl}
+                    title={this.props.itemInfo.name}
+                />
+                <CardContent style={{height: 90, paddingTop: 10}}>
+                    <Typography variant="subheading" gutterBottom>
+                        {this.props.itemInfo.brand}
+                    </Typography>
+                    <Typography variant="caption" gutterBottom>
+                        {this.props.itemInfo.name}
+                    </Typography>
+                    <div style={{display:'flex', flexDirection:'row'}}>
+                        <Button onClick={this.handleClickOpen}>Details</Button>
+                        {
+                            !this.props.itemInfo.is_safe &&
+                            <Avatar style={{
+                                margin: 10,
+                                backgroundColor: '#ff0000',
+                                width: 20,
+                                height: 20
+                            }}>!</Avatar>
+                        }
+                    </div>
+                    <ProductInfo open={this.state.open} onClose={this.handleClose} item={this.props.itemInfo}/>
+                </CardContent>
+            </Card>
         );
     }
 }

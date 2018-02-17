@@ -33,10 +33,24 @@
     flex-wrap: wrap;
     justify-content: space-around;
     overflow: hidden;
-    background-color: cornsilk;
+    background-color: white;
+
 }
 
 .infoContainer {
     display: flex;
     flex-direction: row;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.dialogContainer {
+    margin: 10px;
+}
+
+.productInfoTextContainer {
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

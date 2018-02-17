@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import '../css/styles.css'
 import SearchForm from '../SearchForm/SearchForm'
-import ProductPres from '../SearchPage/ProductPres'
+import ProductContainer from './ProductContainer'
 
 class SearchPage extends Component {
 
@@ -10,7 +10,7 @@ class SearchPage extends Component {
             <div>
                 <SearchForm/>
                 <br/>
-                <ProductPres/>
+                <ProductContainer/>
             </div>
         )
     }
