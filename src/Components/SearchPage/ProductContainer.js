@@ -23,7 +23,7 @@ class ProductContainer extends Component {
     render() {
         return (
             <ProductPres items={this.props.items} isLoading={this.props.isLoading}
-                              hasErrored={this.props.hasErrored} result={this.props.query}/>
+                         hasErrored={this.props.hasErrored} result={this.props.query}/>
         )
     }
 }
