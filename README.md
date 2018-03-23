@@ -15,3 +15,6 @@ To run the client,
 + Run the client on localhost `npm start`. And open http://localhost:3000/.
 
 
+## Project Outline
+
+The website is designed as a single page app using [React](https://github.com/facebook/react), [React-Router](https://github.com/ReactTraining/react-router) and [React-Redux](https://github.com/reactjs/react-redux). Client request data from the server by Ajax. Backend is implemented in Restful API using Flask.
