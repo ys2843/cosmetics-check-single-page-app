@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card, {CardContent, CardMedia} from 'material-ui/Card';
-import Button from 'material-ui/ButtonBase';
 import Typography from 'material-ui/Typography';
 import Avatar from 'material-ui/Avatar';
 import ProductInfo from '../ProductInfoPage/ProductInfo'
-
+import '../css/product.css'
 
 class Product extends React.Component {
 
@@ -31,31 +30,34 @@ class Product extends React.Component {
     render() {
         const imageUrl = 'https://' + this.props.itemInfo.image
         return (
-            <Card style={{paddingTop: 15, width: window.innerWidth / 7}} elevation={0}>
+            <Card elevation={0} className='cardhover'>
                 <CardMedia
-                    style={{height: window.innerWidth / 7}}
+                    onClick={this.handleClickOpen}
+                    component='img'
+                    className="product"
+                    alt='Product Image'
                     image={imageUrl}
                     title={this.props.itemInfo.name}
                 />
-                <CardContent style={{height: 90, paddingTop: 10}}>
+                <CardContent>
                     <Typography variant="subheading" gutterBottom>
                         {this.props.itemInfo.brand}
                     </Typography>
                     <Typography variant="caption" gutterBottom>
                         {this.props.itemInfo.name}
                     </Typography>
-                    <div style={{display:'flex', flexDirection:'row'}}>
-                        <Button onClick={this.handleClickOpen}>Details</Button>
-                        {
-                            !this.props.itemInfo.is_safe &&
-                            <Avatar style={{
-                                margin: 10,
-                                backgroundColor: '#ff0000',
-                                width: 20,
-                                height: 20
-                            }}>!</Avatar>
-                        }
-                    </div>
+                    {
+                        !this.props.itemInfo.is_safe &&
+                        <Avatar style={{
+                            position: 'absolute',
+                            right: '10px',
+                            top: '10px',
+                            margin: 10,
+                            backgroundColor: '#ff0000',
+                            width: 30,
+                            height: 30
+                        }}>!</Avatar>
+                    }
                     <ProductInfo open={this.state.open} onClose={this.handleClose} item={this.props.itemInfo}/>
                 </CardContent>
             </Card>

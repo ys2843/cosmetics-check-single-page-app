@@ -7,7 +7,7 @@ class SearchPage extends Component {
 
     render() {
         return (
-            <div>
+            <div className='searchpage'>
                 <SearchForm/>
                 <br/>
                 <ProductContainer/>

@@ -1,31 +1,8 @@
-.navbar {
-    display: flex;
-    justify-content: flex-start;
-    background-color: lightpink;
-}
-
 .searchFormContainer {
     display: flex;
     justify-content: center;
     flex-direction: row;
 
-}
-
-.homeBox {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-
-}
-
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    text-align: center;
-    background-color: lightpink;
 }
 
 .searchPageRoot {
@@ -34,7 +11,6 @@
     justify-content: space-around;
     overflow: hidden;
     background-color: white;
-
 }
 
 .infoContainer {
@@ -53,4 +29,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.searchpage {
+    position: relative;
+    top: 80px;
+}
+
+.loading {
+    justify-content: center;
+    text-align: center;
 }

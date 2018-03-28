@@ -1,0 +1,37 @@
+.navbarpink {
+    justify-content: flex-start;
+    padding: 0;
+    background-color: lightpink;
+}
+
+li.navli {
+    position: relative;
+    list-style-type: none;
+    line-height: 1;
+    transition: 0.2s all linear;
+    cursor: pointer;
+}
+
+li.navli:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 0;
+    height: 100%;
+    border-bottom: 2px solid #000;
+    transition: 0.2s all linear;
+}
+
+li.navli:hover::before {
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition-delay: 0.1s;
+    border-bottom-color: #000;
+}
+
+li.navli:hover ~ li:before {
+    left: 0;
+}
+

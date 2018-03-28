@@ -9,13 +9,13 @@ import ProductPres from './ProductPres'
 class ProductContainer extends Component {
 
     componentDidMount() {
-        const url = "http://localhost:5000/api/search/" + this.props.query
+        const url = "http://54.83.169.239/api/search/" + this.props.query
         this.props.fetchData(url)
     }
 
     componentWillReceiveProps(nextProps) {
         if (this.props.query !== nextProps.query) {
-            const url = "http://localhost:5000/api/search/" + nextProps.query
+            const url = "http://54.83.169.239/api/search/" + nextProps.query
             this.props.fetchData(url)
         }
     }

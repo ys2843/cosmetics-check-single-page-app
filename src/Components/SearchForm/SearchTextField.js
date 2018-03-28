@@ -30,6 +30,7 @@ function CustomizedInputs(props) {
 
     return (
         <TextField
+            autoFocus={true}
             onChange={onChange}
             InputProps={{
                 disableUnderline: true,

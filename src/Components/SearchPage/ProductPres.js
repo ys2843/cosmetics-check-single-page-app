@@ -3,8 +3,9 @@ import '../css/styles.css'
 import PropTypes from 'prop-types'
 import Product from './Product'
 import GridList, {GridListTile} from 'material-ui/GridList';
-import {LinearProgress} from 'material-ui/Progress';
+import {CircularProgress} from 'material-ui/Progress';
 import Subheader from 'material-ui/List/ListSubheader';
+import Typography from 'material-ui/Typography';
 
 class ProductPres extends Component {
 
@@ -13,27 +14,36 @@ class ProductPres extends Component {
         const {items, hasErrored, isLoading, result} = this.props
 
         if (hasErrored) {
-            return <p>Sorry! There is an error loading the items</p>
+            return (
+                <div className='container loading'>
+                    <Typography variant="display3">Sorry! There is an error loading the items!</Typography>
+                </div>
+            )
         }
         if (isLoading) {
-            return <LinearProgress color="secondary" variant="query"/>
+            return (
+                <div className='container loading'>
+                    <CircularProgress size={100}/>
+                </div>
+            )
+
         }
         return (
-            <div className='searchPageRoot'>
-                <GridList cols={4} style={{width: window.innerWidth * 4 / 7 + 30}}>
-                    <GridListTile cols={4} style={{height: 'auto'}}>
-                        <Subheader component='div'>{items.length} Products results: "{result}"</Subheader>
-                    </GridListTile>
-                    {
-                        items.map(
-                            item => (
-                                <GridListTile key={item.url} style={{height: 'auto', paddingTop:5}}>
-                                    <Product itemInfo={item}/>
-                                </GridListTile>
+            <div className='container'>
+                    <GridList cols={4}>
+                        <GridListTile cols={4} style={{height: 'auto'}}>
+                            <Subheader component='div'>{items.length} Products results: "{result}"</Subheader>
+                        </GridListTile>
+                        {
+                            items.map(
+                                item => (
+                                    <GridListTile key={item.url} style={{height: 'auto', paddingTop: 5}}>
+                                        <Product itemInfo={item}/>
+                                    </GridListTile>
+                                )
                             )
-                        )
-                    }
-                </GridList>
+                        }
+                    </GridList>
             </div>
         )
     }
