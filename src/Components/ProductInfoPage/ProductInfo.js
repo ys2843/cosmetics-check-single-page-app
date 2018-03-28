@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Dialog, {DialogContent} from 'material-ui/Dialog';
+import Dialog, {DialogTitle} from 'material-ui/Dialog';
 import '../css/styles.css'
 import Typography from 'material-ui/Typography'
 import ProductInfoTab from './ProductInfoTab'
+import Tooltip from 'material-ui/Tooltip';
 
 class ProductInfo extends React.Component {
 
@@ -13,30 +14,48 @@ class ProductInfo extends React.Component {
         const imageUrl = 'https://' + item.image
         return (
             <Dialog aria-labelledby="simple-dialog-title" open={open} onClose={onClose}>
-                <DialogContent className="dialogContainer">
-                    <div className="infoContainer">
-                        <img src={imageUrl} width={window.innerWidth / 6} height={window.innerWidth / 6}
-                             alt="Product"/>
-                        <div className="productInfoTextContainer">
+                <DialogTitle>
+                    <div className="row">
+                        <div className="col-5">
+                            <a href={item.url} target="_blank">
+                                <Tooltip id={item.name} title="Visit Sephora Page" placement="right-end">
+                                    <img className="img-thumbnail" src={imageUrl}
+                                         style={{width: '100%', height: 'auto'}}
+                                         alt="Product"/>
+                                </Tooltip>
+                            </a>
+                        </div>
+                        <div className="col-7">
                             <Typography variant="title">
-                                {item.category}
+                                {item.brand}
                             </Typography>
-                            {
-                                item.sub_category !== item.category &&
-                                <Typography variant="subheading">
-                                    {item.sub_category}
-                                </Typography>
-                            }
-                            <Typography variant="body1">
+                            <Typography variant="subheading">
                                 {item.name}
+                            </Typography>
+                            <Typography variant="body1">
+                                {item.category} {(item.sub_category !== item.category && item.sub_category !== 'None') && ' | ' + item.sub_category}
                             </Typography>
                             <Typography variant="body1">
                                 {item.price}
                             </Typography>
+                            <Typography variant="caption" gutterBottom={true}>
+                                {item.love_count} loves
+                            </Typography>
+                            {
+                                !item.is_safe &&
+                                <div>
+                                    <Typography color='secondary' variant='body1'>
+                                        This product is UNSAFE to use.
+                                    </Typography>
+                                    <Typography color='secondary' variant='body1'>
+                                        Unsafe ingredients: {item.unsafe_ingredients}.
+                                    </Typography>
+                                </div>
+                            }
                         </div>
                     </div>
-                    <ProductInfoTab itemInfo={item}/>
-                </DialogContent>
+                </DialogTitle>
+                <ProductInfoTab itemInfo={item}/>
             </Dialog>
         );
     }

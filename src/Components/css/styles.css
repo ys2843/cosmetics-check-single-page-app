@@ -20,17 +20,6 @@
     padding-bottom: 20px;
 }
 
-.dialogContainer {
-    margin: 10px;
-}
-
-.productInfoTextContainer {
-    margin-left: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 .searchpage {
     position: relative;
     top: 80px;

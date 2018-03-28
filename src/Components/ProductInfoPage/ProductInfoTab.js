@@ -65,35 +65,25 @@ class FullWidthTabs extends React.Component {
                     onChangeIndex={this.handleChangeIndex}
                 >
                     <TabContainer dir={theme.direction}>
-                        <div>
+                        <div className={classes.swipeView}>
                             {
-                                itemInfo.is_safe &&
-                                <Typography variant="body1" gutterBottom={true}>
-                                    This Product is SAFE for pregnant women to use.
-                                </Typography>
+                                itemInfo.detail.map(itm => (
+                                    <Typography key={itm}>
+                                        {itm}
+                                    </Typography>
+                                ))
                             }
-                            {
-
-                                !itemInfo.is_safe &&
-                                <Typography variant="body1" gutterBottom={true}>
-                                    This Product is UNSAFE for pregnant women to use.
-                                </Typography>
-                            }
-                            {
-                                <Typography variant="body1" gutterBottom={true}>
-                                    It contains harmful ingredients: {itemInfo.unsafe_ingredients}
-                                </Typography>
-                            }
-                            <Typography variant="body1">
-                                <a href={itemInfo.url}>Product Entry</a>
-                            </Typography>
                         </div>
                     </TabContainer>
                     <TabContainer dir={theme.direction}>
                         <div className={classes.swipeView}>
-                            <Typography variant="body1">
-                                {itemInfo.ingredients}
-                            </Typography>
+                            {
+                                itemInfo.ingredients.map(itm => (
+                                    <Typography key={itm}>
+                                        {itm}
+                                    </Typography>
+                                ))
+                            }
                         </div>
                     </TabContainer>
                 </SwipeableViews>
