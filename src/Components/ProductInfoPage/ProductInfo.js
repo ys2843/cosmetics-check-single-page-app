@@ -45,10 +45,10 @@ class ProductInfo extends React.Component {
                                 !item.is_safe &&
                                 <div>
                                     <Typography color='secondary' variant='body1'>
-                                        This product is UNSAFE to use.
+                                        This product is UNSAFE for pregnant women
                                     </Typography>
                                     <Typography color='secondary' variant='body1'>
-                                        Unsafe ingredients: {item.unsafe_ingredients}.
+                                        Unsafe ingredients: {item.unsafe_ingredients}
                                     </Typography>
                                 </div>
                             }

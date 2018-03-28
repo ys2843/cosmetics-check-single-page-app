@@ -29,21 +29,21 @@ class ProductPres extends Component {
 
         }
         return (
-            <div className='container'>
-                    <GridList cols={4}>
-                        <GridListTile cols={4} style={{height: 'auto'}}>
-                            <Subheader component='div'>{items.length} Products results: "{result}"</Subheader>
-                        </GridListTile>
-                        {
-                            items.map(
-                                item => (
-                                    <GridListTile key={item.url} style={{height: 'auto', paddingTop: 5}}>
-                                        <Product itemInfo={item}/>
-                                    </GridListTile>
-                                )
+            <div className='container' style={{maxWidth: window.innerWidth * 2 / 3}}>
+                <GridList cols={4}>
+                    <GridListTile cols={4} style={{height: 'auto'}}>
+                        <Subheader component='div'>{items.length} Products results: "{result}"</Subheader>
+                    </GridListTile>
+                    {
+                        items.map(
+                            item => (
+                                <GridListTile key={item.url} style={{height: 'auto', paddingTop: 5}}>
+                                    <Product itemInfo={item}/>
+                                </GridListTile>
                             )
-                        }
-                    </GridList>
+                        )
+                    }
+                </GridList>
             </div>
         )
     }
