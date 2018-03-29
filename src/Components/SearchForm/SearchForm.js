@@ -1,7 +1,7 @@
 import React from 'react'
 import '../css/styles.css'
 import SearchTextField from './SearchTextField'
-import {sendQuery} from "../../redux/actions/query";
+import {sendQuery} from "../../redux/actions/actions";
 import Button from 'material-ui/Button';
 import {Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
@@ -45,7 +45,7 @@ class SearchForm extends React.Component {
                 </form>
                 {
                     fireRedirect && (
-                        <Redirect to={'/search/'}/>
+                        <Redirect to={'/search?'+this.state.value}/>
                     )
                 }
             </div>

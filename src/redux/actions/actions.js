@@ -12,10 +12,17 @@ export function itemsIsLoading(bool) {
     };
 }
 
+export function updatePage(page) {
+    return {
+        type: 'UPDATE_PAGE',
+        pageNumber: page
+    }
+}
+
 export function itemsFetchDataSuccess(items) {
     return {
         type: 'ITEMS_FETCH_DATA_SUCCESS',
-        items
+        items: items
     };
 }
 
@@ -24,6 +31,29 @@ export function sendQuery(query) {
         type: 'SEND_QUERY',
         query: query
     };
+}
+
+export function lazyLoad(items) {
+    return {
+        type: 'LAZY_LOAD',
+        items: items
+    };
+}
+
+export function getCountAction(count) {
+    return {
+        type: 'GET_COUNT',
+        count: count
+    }
+}
+
+export function getCount(url) {
+    return (dispatch) => {
+        fetch(url)
+            .then(response => response.json())
+            .then(count => dispatch(getCountAction(count.count)))
+            .catch(() => 'error')
+    }
 }
 
 export function query(url) {
@@ -41,7 +71,9 @@ export function query(url) {
                 return response;
             })
             .then((response) => response.json())
-            .then((items) => dispatch(itemsFetchDataSuccess(items)))
+            .then((items) => {
+                dispatch(itemsFetchDataSuccess(items))
+            })
             .catch(() => dispatch(itemsHasErrored(true)));
     };
 }
