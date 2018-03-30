@@ -65,8 +65,8 @@ const ResultDisplay = ({length, onreturn, content, unsafe}) => {
 const CheckDisplay = ({onChange, onClick}) =>
 
     <form>
-        <Typography variant='headline' gutterBottom={true}>Ingredients Checking Tool</Typography>
-        <textarea placeholder="Enter or Paste the ingredients into this field." onChange={onChange} autoFocus={true} className="form-control"
+        <Typography variant='display1' gutterBottom={true}>Ingredients Checking Tool</Typography>
+        <textarea placeholder="Enter or Paste the ingredients into this field" onChange={onChange} autoFocus={true} className="form-control"
                   rows="5"></textarea>
         <input type="button" onClick={onClick} className="btn btn-primary btn-lg btn-block"
                value='Run'/>
@@ -121,7 +121,7 @@ class IngredientsCheck extends React.Component {
 
     render() {
         return (
-            <div className="homebox">
+            <div className="container ingrebox">
                 {
                     this.state.checked ?
                         <ResultDisplay length={this.state.unsafe.length} onreturn={this.onclickreturn}

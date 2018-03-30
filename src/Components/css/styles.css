@@ -59,8 +59,8 @@
     border-radius: 10px;
     border: none;
     position: fixed;
-    bottom: 100px;
-    right: 100px;
+    bottom: 10%;
+    right: 10%;
     -webkit-transform: perspective(1px) translateZ(0);
     transform: perspective(1px) translateZ(0);
 
