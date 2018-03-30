@@ -5,6 +5,7 @@ import SwipeableViews from 'react-swipeable-views';
 import AppBar from 'material-ui/AppBar';
 import Tabs, {Tab} from 'material-ui/Tabs';
 import Typography from 'material-ui/Typography';
+import uuid from 'uuid/v4'
 
 function TabContainer({children, dir}) {
     return (
@@ -25,6 +26,7 @@ const styles = theme => ({
         width: '100%',
     },
     swipeView: {
+        padding: 10,
         maxHeight: window.innerHeight / 4,
     }
 });
@@ -68,7 +70,7 @@ class FullWidthTabs extends React.Component {
                         <div className={classes.swipeView}>
                             {
                                 itemInfo.detail.map(itm => (
-                                    <Typography key={itm}>
+                                    <Typography key={uuid()}>
                                         {itm}
                                     </Typography>
                                 ))
@@ -79,7 +81,7 @@ class FullWidthTabs extends React.Component {
                         <div className={classes.swipeView}>
                             {
                                 itemInfo.ingredients.map(itm => (
-                                    <Typography key={itm}>
+                                    <Typography key={uuid()}>
                                         {itm}
                                     </Typography>
                                 ))

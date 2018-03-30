@@ -8,7 +8,7 @@ class SearchPage extends Component {
     render() {
         return (
             <div className='searchpage'>
-                <SearchForm/>
+                <SearchForm fire={false}/>
                 <br/>
                 <ProductContainer/>
             </div>

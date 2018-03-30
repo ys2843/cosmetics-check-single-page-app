@@ -7,6 +7,7 @@ import {CircularProgress} from 'material-ui/Progress';
 import Subheader from 'material-ui/List/ListSubheader';
 import Typography from 'material-ui/Typography';
 import Pagination from './Pagination';
+import ScrollButton from './ScrollToTopButton'
 
 class ProductPres extends Component {
 
@@ -20,18 +21,17 @@ class ProductPres extends Component {
 
     render() {
         const {items, hasErrored, isLoading, result, totalCount} = this.props
-        let count = Math.ceil(totalCount / 60)
         if (hasErrored) {
             return (
-                <div className='container loading'>
+                <div className='container'>
                     <Typography variant="display3">Sorry! There is an error loading the items!</Typography>
                 </div>
             )
         }
         if (isLoading) {
             return (
-                <div className='container loading'>
-                    <CircularProgress size={100}/>
+                <div className='container'>
+                    <CircularProgress className='loading' size={100}/>
                 </div>
             )
 
@@ -52,8 +52,9 @@ class ProductPres extends Component {
                         )
                     }
                 </GridList>
-                <Pagination totalCount={count}/>
+                <Pagination pageNumber={this.props.pageNumber} totalCount={Math.ceil(totalCount / 60)}/>
                 <br/>
+                <ScrollButton scrollStepInPx="80" delayInMs="10"/>
             </div>
         )
     }

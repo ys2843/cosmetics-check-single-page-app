@@ -21,8 +21,6 @@ export function items(state = [], action) {
     switch (action.type) {
         case 'ITEMS_FETCH_DATA_SUCCESS':
             return action.items;
-        case 'LAZY_LOAD':
-            return state.concat(action.items)
         default:
             return state;
     }

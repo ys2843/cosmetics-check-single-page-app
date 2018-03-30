@@ -15,7 +15,7 @@ const styles = theme => ({
         backgroundColor: theme.palette.common.white,
         border: "1px solid #ced4da",
         fontSize: 16,
-        padding: "10px 12px",
+        padding: "4px 5px",
         width: window.innerWidth / 3,
         transition: theme.transitions.create(["border-color", "box-shadow"]),
         "&:focus": {
@@ -30,6 +30,7 @@ function CustomizedInputs(props) {
 
     return (
         <TextField
+            required={true}
             autoFocus={true}
             onChange={onChange}
             InputProps={{

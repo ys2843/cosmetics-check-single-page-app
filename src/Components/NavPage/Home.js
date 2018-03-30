@@ -7,7 +7,7 @@ const Home = () => (
         <div className="homebox">
             <img src={im} height={window.innerWidth / 5} alt="logo"/>
             <br/>
-            <SearchForm/>
+            <SearchForm fire={true}/>
         </div>
 )
 

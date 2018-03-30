@@ -28,4 +28,53 @@
 .loading {
     justify-content: center;
     text-align: center;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation: fadeIn 1s;
+}
+
+@keyframes hvr-pulse-grow {
+    to {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+}
+.hvr-pulse-grow {
+    opacity: 0.5;
+    background-color: lightpink;
+    border-radius: 10px;
+    border: none;
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+
+}
+.hvr-pulse-grow:hover{
+    opacity: 1;
+    -webkit-animation-name: hvr-pulse-grow;
+    animation-name: hvr-pulse-grow;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
 }

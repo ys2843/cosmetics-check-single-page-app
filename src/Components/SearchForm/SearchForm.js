@@ -33,19 +33,17 @@ class SearchForm extends React.Component {
     }
 
     render() {
-        const {fireRedirect} = this.state
         return (
             <div>
-                <form
-                    onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit}>
                     <div className='searchFormContainer'>
                         <SearchTextField onChange={this.handleOnChange}/>
-                        <Button variant="raised" type='submit'>Search</Button>
+                        <Button variant="raised" size="small" type='submit'>Search</Button>
                     </div>
                 </form>
                 {
-                    fireRedirect && (
-                        <Redirect to={'/search?'+this.state.value}/>
+                    this.props.fire && this.state.fireRedirect && (
+                        <Redirect to={'/search?' + this.state.value}/>
                     )
                 }
             </div>

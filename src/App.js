@@ -10,6 +10,7 @@ import NavBar from './Components/NavPage/NavBar'
 import Footer from "./Components/NavPage/Footer";
 import SearchPage from './Components/SearchPage/SearchPage'
 import NotFound from './Components/NavPage/NotFound'
+import IngreCheck from './Components/IngredientsCheck/IngredientsCheck'
 
 const App = () =>
     <Router>
@@ -19,6 +20,7 @@ const App = () =>
                 <Route exact path="/" component={Home}/>
                 <Route path="/about" component={About}/>
                 <Route path="/search/" component={SearchPage}/>
+                <Route path="/ingrecheck" component={IngreCheck}/>
                 <Route component={NotFound}/>
             </Switch>
             <Footer/>

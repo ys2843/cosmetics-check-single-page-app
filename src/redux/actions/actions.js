@@ -33,13 +33,6 @@ export function sendQuery(query) {
     };
 }
 
-export function lazyLoad(items) {
-    return {
-        type: 'LAZY_LOAD',
-        items: items
-    };
-}
-
 export function getCountAction(count) {
     return {
         type: 'GET_COUNT',
