@@ -42,15 +42,19 @@ class ProductInfo extends React.Component {
                                 {item.love_count} loves
                             </Typography>
                             {
-                                !item.is_safe &&
-                                <div>
-                                    <Typography color='secondary' variant='body1'>
-                                        This product is UNSAFE for pregnant women
-                                    </Typography>
-                                    <Typography color='secondary' variant='body1'>
-                                        Unsafe ingredients: {item.unsafe_ingredients}
-                                    </Typography>
-                                </div>
+                                item.ingredients[0] === 'None' ?
+                                    <Typography color='primary' variant='body1'>
+                                        No ingredients information found.
+                                    </Typography> :
+                                    !item.is_safe &&
+                                    <div>
+                                        <Typography color='secondary' variant='body1'>
+                                            This product is UNSAFE for pregnant women
+                                        </Typography>
+                                        <Typography color='secondary' variant='body1'>
+                                            Unsafe ingredients: {item.unsafe_ingredients}
+                                        </Typography>
+                                    </div>
                             }
                         </div>
                     </div>

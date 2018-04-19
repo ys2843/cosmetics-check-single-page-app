@@ -47,16 +47,26 @@ class Product extends React.Component {
                         {this.props.itemInfo.name}
                     </Typography>
                     {
-                        !this.props.itemInfo.is_safe &&
-                        <Avatar style={{
-                            position: 'absolute',
-                            right: '10px',
-                            top: '10px',
-                            margin: 10,
-                            backgroundColor: '#ff0000',
-                            width: 30,
-                            height: 30
-                        }}>!</Avatar>
+                        this.props.itemInfo.ingredients[0] === 'None' ?
+                            <Avatar style={{
+                                position: 'absolute',
+                                right: '10px',
+                                top: '10px',
+                                margin: 10,
+                                backgroundColor: 'green',
+                                width: 30,
+                                height: 30
+                            }}>?</Avatar> :
+                            !this.props.itemInfo.is_safe &&
+                            <Avatar style={{
+                                position: 'absolute',
+                                right: '10px',
+                                top: '10px',
+                                margin: 10,
+                                backgroundColor: '#ff0000',
+                                width: 30,
+                                height: 30
+                            }}>!</Avatar>
                     }
                     <ProductInfo open={this.state.open} onClose={this.handleClose} item={this.props.itemInfo}/>
                 </CardContent>
