@@ -54,6 +54,11 @@ const ResultDisplay = ({length, onreturn, content, unsafe}) => {
                 <div className="alert alert-primary fadeIn" role="alert">
                     SAFE! No harmful ingredients found.
                 </div>
+                <Paper elevation={4} style={{padding: '20px'}}>
+                    <Typography variant='body1' gutterBottom={true}>
+                        {content}
+                    </Typography>
+                </Paper>
                 <button className="btn btn-primary btn-lg btn-block" onClick={onreturn}>Back</button>
             </div>
         )
@@ -62,11 +67,12 @@ const ResultDisplay = ({length, onreturn, content, unsafe}) => {
 }
 
 
-const CheckDisplay = ({onChange, onClick}) =>
+const CheckDisplay = ({onChange, onClick, onPress}) =>
 
     <form>
-        <Typography variant='display1' gutterBottom={true}>Ingredients Checking Tool</Typography>
-        <textarea placeholder="Enter or Paste the ingredients into this field" onChange={onChange} autoFocus={true} className="form-control"
+        <Typography variant='display1' gutterBottom={true}>Harmful Ingredients Checking Tool</Typography>
+        <textarea placeholder="Enter or Paste the ingredients into this field" onChange={onChange} autoFocus={true}
+                  className="form-control" onKeyPress={onPress}
                   rows="5"></textarea>
         <input type="button" onClick={onClick} className="btn btn-primary btn-lg btn-block"
                value='Run'/>
@@ -82,6 +88,7 @@ class IngredientsCheck extends React.Component {
             checked: false,
             content: ''
         }
+        this.onPress = this.onPress.bind(this)
         this.onclick = this.onclick.bind(this)
         this.onChange = this.onChange.bind(this)
         this.onclickreturn = this.onclickreturn.bind(this)
@@ -96,6 +103,13 @@ class IngredientsCheck extends React.Component {
             }
         })
         return unsafeIng;
+    }
+
+    onPress = (e) => {
+        var validation = /[a-zA-Z]/;
+        if (e.key === 'Enter' && validation.test(this.state.content)) {
+            this.onclick(e)
+        }
     }
 
     onChange = (e) => {
@@ -115,7 +129,8 @@ class IngredientsCheck extends React.Component {
 
     onclickreturn = (e) => {
         this.setState({
-            checked: false
+            checked: false,
+            content: ''
         })
     }
 
@@ -127,7 +142,7 @@ class IngredientsCheck extends React.Component {
                         <ResultDisplay length={this.state.unsafe.length} onreturn={this.onclickreturn}
                                        content={this.state.content}
                                        unsafe={this.state.unsafe}/> :
-                        <CheckDisplay onChange={this.onChange} onClick={this.onclick}/>
+                        <CheckDisplay onChange={this.onChange} onClick={this.onclick} onPress={this.onPress}/>
                 }
             </div>
         )

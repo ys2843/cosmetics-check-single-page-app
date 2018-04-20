@@ -15,13 +15,18 @@ const NavBar = () =>
             </Button>
         </li>
         <li className='navli'>
+            <Button component={toIngCheck}>
+                Ingredients Check
+            </Button>
+        </li>
+        <li className='navli'>
             <Button component={toAbout}>
                 About
             </Button>
         </li>
         <li className='navli'>
-            <Button component={toIngCheck}>
-                Ingredients Check
+            <Button>
+                <a href='https://github.com/ys2843/SkincareWebProject' target="_blank" style={{textDecoration: 'none', color: 'black'}}>VIEW ON GITHUB</a>
             </Button>
         </li>
     </ul>

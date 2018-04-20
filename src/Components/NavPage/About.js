@@ -1,7 +1,9 @@
 import React from 'react'
 
 const About = () => (
-    <div>About</div>
+    <div className='container'>
+
+    </div>
 )
 
 export default About

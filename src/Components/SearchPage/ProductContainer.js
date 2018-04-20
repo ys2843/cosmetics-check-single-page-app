@@ -1,9 +1,11 @@
 import React, {Component} from 'react'
 import '../css/styles.css'
 import {connect} from 'react-redux'
+import Typography from 'material-ui/Typography';
 import PropTypes from 'prop-types'
 import {query, getCount} from "../../redux/actions/actions"
 import ProductPres from './ProductPres'
+import Avatar from 'material-ui/Avatar';
 
 class ProductContainer extends Component {
 
@@ -32,9 +34,35 @@ class ProductContainer extends Component {
 
     render() {
         return (
-            <ProductPres items={this.props.items} isLoading={this.props.isLoading} totalCount={this.props.count}
-                         hasErrored={this.props.hasErrored} result={this.props.query} handleScroll={this.handleScroll}/>
-
+            <div>
+                <ProductPres items={this.props.items} isLoading={this.props.isLoading} totalCount={this.props.count}
+                             hasErrored={this.props.hasErrored} result={this.props.query}
+                             handleScroll={this.handleScroll}/>
+                <div className='informpanel'>
+                    <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+                        <Avatar style={{
+                            margin: 10,
+                            backgroundColor: 'green',
+                            width: 30,
+                            height: 30
+                        }}>?</Avatar>
+                        <Typography variant='caption'>
+                            Unknown Ingredients
+                        </Typography>
+                    </div>
+                    <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+                        <Avatar style={{
+                            margin: 10,
+                            backgroundColor: '#ff0000',
+                            width: 30,
+                            height: 30
+                        }}>!</Avatar>
+                        <Typography variant='caption'>
+                            Unsafe Products
+                        </Typography>
+                    </div>
+                </div>
+            </div>
         )
     }
 }

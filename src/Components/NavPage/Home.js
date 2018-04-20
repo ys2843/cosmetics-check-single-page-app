@@ -1,12 +1,11 @@
 import React from 'react'
 import SearchForm from '../SearchForm/SearchForm'
 import '../css/Home.css'
-import im from '../../Image/frontPage.jpg'
+import im from '../../Image/frontPage.png'
 
 const Home = () => (
         <div className="homebox">
-            <img src={im} height={window.innerWidth / 5} alt="logo"/>
-            <br/>
+            <img src={im} alt="logo"/>
             <SearchForm fire={true}/>
         </div>
 )
