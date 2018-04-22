@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f826a04f-71f0-4ebd-8d6e-c4f749a07fc8" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Image/frontPage.png" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/Components/IngredientsCheck/IngredientsCheck.js" afterPath="$PROJECT_DIR$/src/Components/IngredientsCheck/IngredientsCheck.js" />
-      <change beforePath="$PROJECT_DIR$/src/Components/NavPage/About.js" afterPath="$PROJECT_DIR$/src/Components/NavPage/About.js" />
-      <change beforePath="$PROJECT_DIR$/src/Components/NavPage/Home.js" afterPath="$PROJECT_DIR$/src/Components/NavPage/Home.js" />
-      <change beforePath="$PROJECT_DIR$/src/Components/NavPage/NavBar.js" afterPath="$PROJECT_DIR$/src/Components/NavPage/NavBar.js" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SearchForm/SearchTextField.js" afterPath="$PROJECT_DIR$/src/Components/SearchForm/SearchTextField.js" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SearchPage/ProductContainer.js" afterPath="$PROJECT_DIR$/src/Components/SearchPage/ProductContainer.js" />
-      <change beforePath="$PROJECT_DIR$/src/Components/css/styles.css" afterPath="$PROJECT_DIR$/src/Components/css/styles.css" />
-      <change beforePath="$PROJECT_DIR$/src/Image/frontPage.jpg" afterPath="" />
-    </list>
+    <list default="true" id="f826a04f-71f0-4ebd-8d6e-c4f749a07fc8" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -49,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/src/Components/IngredientsCheck/IngredientsCheck.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1340">
-              <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+              <caret line="21" column="21" lean-forward="false" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -274,12 +263,12 @@
       <workItem from="1520540920413" duration="681000" />
       <workItem from="1520818356762" duration="808000" />
       <workItem from="1522115207485" duration="79877000" />
-      <workItem from="1524175980723" duration="8073000" />
+      <workItem from="1524175980723" duration="8489000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179827000" />
+    <option name="totallyTimeSpent" value="180243000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -631,7 +620,7 @@
         <state relative-caret-position="105">
           <caret line="7" column="25" lean-forward="false" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#0#25#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -663,7 +652,7 @@
     <entry file="file://$PROJECT_DIR$/src/Components/IngredientsCheck/IngredientsCheck.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1340">
-          <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+          <caret line="21" column="21" lean-forward="false" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
           <folding />
         </state>
       </provider>
