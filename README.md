@@ -14,13 +14,13 @@ To run the client,
 
 This project is designed to implement a database back-end single page application, which is mainly used for checking whether a skincare product is safe to use during pregnancy. By using this app, users can search by name or brand to look up a certain cosmetic, and the relevant information is displayed with a noticeable sign indicating if it is safe for pregnant or contains harmful ingredients.
 
-###Design of Front-End
+### Design of Front-End
 
 Front-End is designed as a SPA (Single page application) that it manages all the routing and data flow on client side. In this project, React which is *a JavaScript library forbuilding user interfaces,* combined with React-Router and Redux which is *a predictable state container forJavaScript apps,* are used to implement the app. 
 
 The app mainly contains 2 functions. One is the search of products and another one is ingredients check.
 
-####Searching
+#### Searching
 
 The home page of the app is the searching page. The text field is focused automatically when entering the site. Users can easily see what this app can do by looking at the self-designed logo. 
 
@@ -30,7 +30,7 @@ At the bottom of display page, there is a pagination bar. Current page is emphas
 
 When clicking on a product card, a window appears to give amore detailed information of the product. If a product is unsafe, there is a noticeable red sign indicating the harmful ingredients in it. Users can check details and ingredients about the item and go to its website on Sephora store by clicking the picture.
 
-####Ingredients Check
+#### Ingredients Check
 
 Another function in front-end is ingredients check, it allows users to find out harmful ingredients in a string.
 
