@@ -26,7 +26,8 @@ const NavBar = () =>
         </li>
         <li className='navli'>
             <Button>
-                <a href='https://github.com/ys2843/SkincareWebProject' target="_blank" style={{textDecoration: 'none', color: 'black'}}>VIEW ON GITHUB</a>
+                <a href='https://github.com/ys2843/SkincareWebProject' rel="noopener noreferrer" target="_blank"
+                   style={{textDecoration: 'none', color: 'black'}}>VIEW ON GITHUB</a>
             </Button>
         </li>
     </ul>
