@@ -1,21 +1,15 @@
-import React, {Component} from 'react'
-import '../css/styles.css'
-import SearchForm from '../SearchForm/SearchForm'
-import ProductContainer from './ProductContainer'
+import React from 'react';
+import '../css/styles.css';
+import SearchForm from '../SearchForm/SearchForm';
+import ProductContainer from './ProductContainer';
 
-class SearchPage extends Component {
 
-    render() {
-        return (
-            <div className='searchpage'>
-                <SearchForm fire={false}/>
-                <br/>
-                <ProductContainer/>
-            </div>
-        )
-    }
+const SearchPage = () =>
 
-}
-
+    <div className='searchpage'>
+        <SearchForm fire={false}/>
+        <br/>
+        <ProductContainer/>
+    </div>
 
 export default SearchPage

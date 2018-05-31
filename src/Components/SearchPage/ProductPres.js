@@ -1,18 +1,18 @@
-import React, {Component} from 'react'
-import '../css/styles.css'
-import PropTypes from 'prop-types'
-import Product from './Product'
+import React, {Component} from 'react';
+import '../css/styles.css';
+import PropTypes from 'prop-types';
+import Product from './Product';
 import GridList, {GridListTile} from 'material-ui/GridList';
 import {CircularProgress} from 'material-ui/Progress';
 import Subheader from 'material-ui/List/ListSubheader';
 import Typography from 'material-ui/Typography';
 import Pagination from './Pagination';
-import ScrollButton from './ScrollToTopButton'
+import ScrollButton from './ScrollToTopButton';
 
 class ProductPres extends Component {
 
     componentDidMount() {
-        window.addEventListener('scroll', this.props.handleScroll)
+        window.addEventListener('scroll', this.props.handleScroll);
     }
 
     componentWillUnmount() {
@@ -20,20 +20,20 @@ class ProductPres extends Component {
     }
 
     render() {
-        const {items, hasErrored, isLoading, result, totalCount} = this.props
+        const {items, hasErrored, isLoading, result, totalCount} = this.props;
         if (hasErrored) {
             return (
                 <div className='container'>
                     <Typography variant="display3">Sorry! There is an error loading the items!</Typography>
                 </div>
-            )
+            );
         }
         if (isLoading) {
             return (
                 <div className='container'>
                     <CircularProgress className='loading' size={100}/>
                 </div>
-            )
+            );
 
         }
         return (
@@ -56,7 +56,7 @@ class ProductPres extends Component {
                 <br/>
                 <ScrollButton scrollStepInPx="80" delayInMs="10"/>
             </div>
-        )
+        );
     }
 }
 

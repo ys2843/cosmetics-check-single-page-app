@@ -1,16 +1,16 @@
-import React from 'react'
+import React from 'react';
 import {
     BrowserRouter as Router,
     Switch,
     Route
-} from 'react-router-dom'
-import About from './Components/NavPage/About'
-import Home from './Components/NavPage/Home'
-import NavBar from './Components/NavPage/NavBar'
+} from 'react-router-dom';
+import About from './Components/NavPage/About';
+import Home from './Components/NavPage/Home';
+import NavBar from './Components/NavPage/NavBar';
 import Footer from "./Components/NavPage/Footer";
-import SearchPage from './Components/SearchPage/SearchPage'
-import NotFound from './Components/NavPage/NotFound'
-import IngreCheck from './Components/IngredientsCheck/IngredientsCheck'
+import SearchPage from './Components/SearchPage/SearchPage';
+import NotFound from './Components/NavPage/NotFound';
+import IngreCheck from './Components/IngredientsCheck/IngredientsCheck';
 
 const App = () =>
     <Router>

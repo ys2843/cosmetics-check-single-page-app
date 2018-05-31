@@ -1,5 +1,5 @@
-import {combineReducers} from 'redux'
-import {items, itemsHasErrored, itemsIsLoading, updateQuery, changePage, getTotalCount} from './reducer'
+import {combineReducers} from 'redux';
+import {items, itemsHasErrored, itemsIsLoading, updateQuery, changePage, getTotalCount} from './reducer';
 
 export default combineReducers({
     items,
@@ -8,4 +8,4 @@ export default combineReducers({
     changePage,
     itemsIsLoading,
     updateQuery
-})
+});

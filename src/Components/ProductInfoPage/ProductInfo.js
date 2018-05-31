@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Dialog, {DialogTitle} from 'material-ui/Dialog';
-import '../css/styles.css'
-import Typography from 'material-ui/Typography'
-import ProductInfoTab from './ProductInfoTab'
+import '../css/styles.css';
+import Typography from 'material-ui/Typography';
+import ProductInfoTab from './ProductInfoTab';
 import Tooltip from 'material-ui/Tooltip';
 
 class ProductInfo extends React.Component {
-
 
     render() {
         const {item, open, onClose} = this.props;
@@ -72,4 +71,4 @@ ProductInfo.propTypes = {
 
 };
 
-export default ProductInfo
+export default ProductInfo;

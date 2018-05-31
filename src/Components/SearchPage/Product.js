@@ -3,32 +3,32 @@ import PropTypes from 'prop-types';
 import Card, {CardContent, CardMedia} from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
 import Avatar from 'material-ui/Avatar';
-import ProductInfo from '../ProductInfoPage/ProductInfo'
-import '../css/product.css'
+import ProductInfo from '../ProductInfoPage/ProductInfo';
+import '../css/product.css';
 
 class Product extends React.Component {
 
     constructor(props) {
-        super()
+        super(props);
         this.state = {
             open: false
-        }
-        this.handleClickOpen = this.handleClickOpen.bind(this)
-        this.handleClose = this.handleClose.bind(this)
+        };
+        this.handleClickOpen = this.handleClickOpen.bind(this);
+        this.handleClose = this.handleClose.bind(this);
     }
 
     handleClickOpen = () => {
         this.setState({
             open: true
-        })
-    }
+        });
+    };
 
     handleClose = value => {
-        this.setState({open: false})
-    }
+        this.setState({open: false});
+    };
 
     render() {
-        const imageUrl = 'https://' + this.props.itemInfo.image
+        const imageUrl = 'https://' + this.props.itemInfo.image;
         return (
             <Card elevation={0} className='cardhover'>
                 <CardMedia

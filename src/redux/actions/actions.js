@@ -16,7 +16,7 @@ export function updatePage(page) {
     return {
         type: 'UPDATE_PAGE',
         pageNumber: page
-    }
+    };
 }
 
 export function itemsFetchDataSuccess(items) {
@@ -37,7 +37,7 @@ export function getCountAction(count) {
     return {
         type: 'GET_COUNT',
         count: count
-    }
+    };
 }
 
 export function getCount(url) {
@@ -46,7 +46,7 @@ export function getCount(url) {
             .then(response => response.json())
             .then(count => dispatch(getCountAction(count.count)))
             .catch(() => 'error')
-    }
+    };
 }
 
 export function query(url) {

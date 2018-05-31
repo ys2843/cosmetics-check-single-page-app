@@ -1,14 +1,14 @@
-import React from 'react'
-import '../css/styles.css'
-import SearchTextField from './SearchTextField'
+import React from 'react';
+import '../css/styles.css';
+import SearchTextField from './SearchTextField';
 import {sendQuery} from "../../redux/actions/actions";
 import Button from 'material-ui/Button';
-import {Redirect} from 'react-router-dom'
-import {connect} from 'react-redux'
+import {Redirect} from 'react-router-dom';
+import {connect} from 'react-redux';
 
 class SearchForm extends React.Component {
     constructor(props) {
-        super();
+        super(props);
         this.state = {
             value: '',
             fireRedirect: false
@@ -19,17 +19,17 @@ class SearchForm extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        this.props.dispatch(sendQuery(this.state.value))
+        this.props.dispatch(sendQuery(this.state.value));
         this.setState({
             fireRedirect: true
-        })
+        });
     }
 
     handleOnChange(event) {
         event.preventDefault();
         this.setState({
             value: event.target.value
-        })
+        });
     }
 
     render() {
@@ -47,9 +47,8 @@ class SearchForm extends React.Component {
                     )
                 }
             </div>
-        )
-
+        );
     }
 }
 
-export default connect()(SearchForm)
+export default connect()(SearchForm);

@@ -1,11 +1,11 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
-import '../css/Navbar.css'
+import React from 'react';
+import {Link} from 'react-router-dom';
+import '../css/Navbar.css';
 import Button from 'material-ui/Button';
 
-const toHome = props => <Link to="/" {...props} />
-const toAbout = props => <Link to="/about" {...props} />
-const toIngCheck = props => <Link to="/ingrecheck" {...props}/>
+const toHome = props => <Link to="/" {...props} />;
+const toAbout = props => <Link to="/about" {...props} />;
+const toIngCheck = props => <Link to="/ingrecheck" {...props}/>;
 
 const NavBar = () =>
     <ul className="navbar fixed-top navbarpink">
@@ -30,7 +30,7 @@ const NavBar = () =>
                    style={{textDecoration: 'none', color: 'black'}}>VIEW ON GITHUB</a>
             </Button>
         </li>
-    </ul>
+    </ul>;
 
 
-export default NavBar
+export default NavBar;

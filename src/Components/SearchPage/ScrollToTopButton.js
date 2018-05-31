@@ -1,10 +1,10 @@
-import React from 'react'
-import Upward from 'material-ui-icons/ArrowUpward'
+import React from 'react';
+import Upward from 'material-ui-icons/ArrowUpward';
 
 class ScrollToTopButton extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             intervalId: 0
         };
@@ -30,7 +30,7 @@ class ScrollToTopButton extends React.Component {
                     }}>
                 <Upward style={{width: '40px', height: '40px'}}/>
             </button>
-        )
+        );
     }
 }
 

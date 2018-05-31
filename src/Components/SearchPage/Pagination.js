@@ -1,12 +1,12 @@
 import React from 'react';
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
 import {updatePage} from "../../redux/actions/actions";
-import '../css/styles.css'
+import '../css/styles.css';
 
 class Pagination extends React.Component {
 
     constructor(props) {
-        super();
+        super(props);
         this.onClick = this.onClick.bind(this);
     }
 
@@ -28,13 +28,13 @@ class Pagination extends React.Component {
                     this.props.dispatch(updatePage(content));
                 }
         }
-    }
+    };
 
     render() {
 
         if (this.props.totalCount === 0) {
             return (
-                <div></div>
+                <div/>
             )
         }
         let arr = [];
@@ -61,15 +61,14 @@ class Pagination extends React.Component {
                     </li>
                 </ul>
             </nav>
-        )
-
+        );
     }
 }
 
 function mapStateToProps(state) {
     return {
         pageNumber: state.changePage
-    }
+    };
 }
 
 export default connect(mapStateToProps)(Pagination);

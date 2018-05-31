@@ -5,7 +5,7 @@ import SwipeableViews from 'react-swipeable-views';
 import AppBar from 'material-ui/AppBar';
 import Tabs, {Tab} from 'material-ui/Tabs';
 import Typography from 'material-ui/Typography';
-import uuid from 'uuid/v4'
+import uuid from 'uuid/v4';
 
 function TabContainer({children, dir}) {
     return (
@@ -17,17 +17,17 @@ function TabContainer({children, dir}) {
 
 TabContainer.propTypes = {
     children: PropTypes.node.isRequired,
-    dir: PropTypes.string.isRequired,
+    dir: PropTypes.string.isRequired
 };
 
 const styles = theme => ({
     root: {
         backgroundColor: theme.palette.background.paper,
-        width: '100%',
+        width: '100%'
     },
     swipeView: {
         padding: 10,
-        maxHeight: window.innerHeight / 4,
+        maxHeight: window.innerHeight / 4
     }
 });
 

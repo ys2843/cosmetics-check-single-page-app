@@ -1,6 +1,6 @@
 import React from 'react';
-import Typography from 'material-ui/Typography'
-import '../css/styles.css'
+import Typography from 'material-ui/Typography';
+import '../css/styles.css';
 import Paper from 'material-ui/Paper';
 
 const skincare_ingredients_to_avoid = ['lead', 'triclosan', 'oxybenzone', 'bht',
@@ -16,7 +16,7 @@ const skincare_ingredients_to_avoid = ['lead', 'triclosan', 'oxybenzone', 'bht',
 
 
 const getHighlightedText = (text, higlight) => {
-    let re = '(' + higlight.join('|') + ')'
+    let re = '(' + higlight.join('|') + ')';
     let parts = text.split(new RegExp(re, 'gi'));
     return <span> {parts.map((part, i) =>
         <span key={i}
@@ -29,12 +29,12 @@ const getHighlightedText = (text, higlight) => {
             {part}
         </span>)
     } </span>;
-}
+};
 
 
 const ResultDisplay = ({length, onreturn, content, unsafe}) => {
     if (length > 0) {
-        let displayContent = getHighlightedText(content, unsafe)
+        let displayContent = getHighlightedText(content, unsafe);
         return (
             <div>
                 <div className="alert alert-danger fadeIn" role="alert">
@@ -63,8 +63,7 @@ const ResultDisplay = ({length, onreturn, content, unsafe}) => {
             </div>
         )
     }
-
-}
+};
 
 
 const CheckDisplay = ({onChange, onClick, onPress}) =>
@@ -72,8 +71,7 @@ const CheckDisplay = ({onChange, onClick, onPress}) =>
     <form>
         <Typography variant='display1' gutterBottom={true}>Harmful Ingredients Checking Tool</Typography>
         <textarea placeholder="Enter or Paste the ingredients into this field" onChange={onChange} autoFocus={true}
-                  className="form-control" onKeyPress={onPress}
-                  rows="5"></textarea>
+                  className="form-control" onKeyPress={onPress} rows="5"/>
         <input type="button" onClick={onClick} className="btn btn-primary btn-lg btn-block"
                value='Run'/>
     </form>
@@ -81,17 +79,17 @@ const CheckDisplay = ({onChange, onClick, onPress}) =>
 
 class IngredientsCheck extends React.Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props);
         this.state = {
             unsafe: [],
             checked: false,
             content: ''
-        }
-        this.onPress = this.onPress.bind(this)
-        this.onclick = this.onclick.bind(this)
-        this.onChange = this.onChange.bind(this)
-        this.onclickreturn = this.onclickreturn.bind(this)
+        };
+        this.onPress = this.onPress.bind(this);
+        this.onclick = this.onclick.bind(this);
+        this.onChange = this.onChange.bind(this);
+        this.onclickreturn = this.onclickreturn.bind(this);
     }
 
     checkIngre = (content) => {
@@ -101,22 +99,22 @@ class IngredientsCheck extends React.Component {
             if (contentlower.includes(ing)) {
                 unsafeIng.push(ing);
             }
-        })
+        });
         return unsafeIng;
-    }
+    };
 
     onPress = (e) => {
-        var validation = /[a-zA-Z]/;
+        const validation = /[a-zA-Z]/;
         if (e.key === 'Enter' && validation.test(this.state.content)) {
             this.onclick(e)
         }
-    }
+    };
 
     onChange = (e) => {
         this.setState({
             content: e.target.value
         })
-    }
+    };
 
     onclick = (e) => {
         if (this.state.content !== '') {
@@ -125,14 +123,14 @@ class IngredientsCheck extends React.Component {
                 unsafe: this.checkIngre(this.state.content)
             })
         }
-    }
+    };
 
     onclickreturn = (e) => {
         this.setState({
             checked: false,
             content: ''
         })
-    }
+    };
 
     render() {
         return (
@@ -145,7 +143,7 @@ class IngredientsCheck extends React.Component {
                         <CheckDisplay onChange={this.onChange} onClick={this.onclick} onPress={this.onPress}/>
                 }
             </div>
-        )
+        );
     }
 }
 

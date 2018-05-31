@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Typography from 'material-ui/Typography';
 import Table, {TableBody, TableCell, TableHead, TableRow} from 'material-ui/Table';
 
@@ -160,6 +160,6 @@ const About = () => (
             ingredients found, red alert appears with specific words highlighted in yellow.
         </Typography>
     </div>
-)
+);
 
-export default About
+export default About;
