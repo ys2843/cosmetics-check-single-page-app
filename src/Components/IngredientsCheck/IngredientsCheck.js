@@ -134,7 +134,7 @@ class IngredientsCheck extends React.Component {
 
     render() {
         return (
-            <div className="container ingrebox">
+            <div className="home-box container">
                 {
                     this.state.checked ?
                         <ResultDisplay length={this.state.unsafe.length} onreturn={this.onclickreturn}

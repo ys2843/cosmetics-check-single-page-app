@@ -36,7 +36,7 @@ class SearchForm extends React.Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <div className='searchFormContainer'>
+                    <div className='search-form-container'>
                         <SearchTextField onChange={this.handleOnChange}/>
                         <Button variant="raised" size="small" type='submit'>Search</Button>
                     </div>

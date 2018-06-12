@@ -1,4 +1,4 @@
-.searchFormContainer {
+.search-form-container {
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -81,7 +81,7 @@
     animation-direction: alternate;
 }
 
-.informpanel {
+.inform-panel {
     position: fixed;
     left: 2%;
     top: 40%;

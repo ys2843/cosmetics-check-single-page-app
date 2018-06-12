@@ -8,7 +8,7 @@ const Footer = () =>
             Project Name: Skincare Ingredients Look up Website Developed for Pregnancy Women | Developed by: Yang Shi
             (NYU) | Date: 2/15/2018
         </Typography>
-    </div>
+    </div>;
 
 
 export default Footer;

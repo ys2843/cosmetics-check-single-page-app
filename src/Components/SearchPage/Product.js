@@ -30,7 +30,7 @@ class Product extends React.Component {
     render() {
         const imageUrl = 'https://' + this.props.itemInfo.image;
         return (
-            <Card elevation={0} className='cardhover'>
+            <Card elevation={0} className='card-hover'>
                 <CardMedia
                     onClick={this.handleClickOpen}
                     component='img'

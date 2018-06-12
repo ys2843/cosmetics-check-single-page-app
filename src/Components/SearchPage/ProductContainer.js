@@ -10,12 +10,13 @@ import Avatar from 'material-ui/Avatar';
 class ProductContainer extends Component {
 
     componentDidMount() {
+        const nPerPage = window.innerWidth < 600 ? 15 : 60;
         if (this.props.query !== '') {
-            let url = "http://54.83.169.239/api/search/" + this.props.query + '/' + this.props.pageNumber;
-            //let url = "http://localhost:3001/api/search/" + this.props.query + '/' + this.props.pageNumber + '/' + this.state.lazyLoadCount;
+            let url = "http://54.83.169.239/api/search/" + this.props.query + '/' + this.props.pageNumber + '/' + nPerPage;
+            // let url = "http://localhost:3001/api/search/" + this.props.query + '/' + this.props.pageNumber + '/' + nPerPage;
             this.props.fetchData(url);
             let urlCount = "http://54.83.169.239/api/" + this.props.query + '/count';
-            //let urlCount = "http://localhost:3001/api/search/" + this.props.query + '/count';
+            // let urlCount = "http://localhost:3001/api/" + this.props.query + '/count';
             this.props.fetchCount(urlCount);
         }
     }
@@ -23,10 +24,12 @@ class ProductContainer extends Component {
 
     componentWillReceiveProps(nextProps) {
         if (this.props.query !== nextProps.query || this.props.pageNumber !== nextProps.pageNumber) {
-            // const url = "http://54.83.169.239/api/search/" + this.props.query + '/' + this.state.pageNumber + '/' + this.state.lazyLoadCount;
-            let url = "http://54.83.169.239/api/search/" + nextProps.query + '/' + nextProps.pageNumber;
+            let nPerPage = window.innerWidth < 600 ? 15 : 60;
+            // let url = "http://localhost:3001/api/search/" + nextProps.query + '/' + nextProps.pageNumber + '/' + nPerPage;
+            let url = "http://54.83.169.239/api/search/" + nextProps.query + '/' + nextProps.pageNumber + '/' + nPerPage;
             this.props.fetchData(url);
             let urlCount = "http://54.83.169.239/api/" + nextProps.query + '/count';
+            //let urlCount = "http://localhost:3001/api/" + nextProps.query + '/count';
             this.props.fetchCount(urlCount);
         }
     }
@@ -37,7 +40,7 @@ class ProductContainer extends Component {
                 <ProductPres items={this.props.items} isLoading={this.props.isLoading} totalCount={this.props.count}
                              hasErrored={this.props.hasErrored} result={this.props.query}
                              handleScroll={this.handleScroll}/>
-                <div className='informpanel'>
+                <div className='inform-panel'>
                     <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
                         <Avatar style={{
                             margin: 10,

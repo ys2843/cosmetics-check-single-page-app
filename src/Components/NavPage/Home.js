@@ -4,10 +4,10 @@ import '../css/Home.css';
 import im from '../../Image/frontPage.png';
 
 const Home = () =>
-    <div className="homebox">
-        <img src={im} alt="logo"/>
+    <div className="home-box">
+        <img src={im} alt="logo" className="home-logo"/>
         <SearchForm fire={true}/>
-    </div>
+    </div>;
 
 
 export default Home;

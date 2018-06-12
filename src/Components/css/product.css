@@ -7,7 +7,7 @@
     cursor: zoom-in;
 }
 
-.cardhover {
+.card-hover {
     margin: 10px;
     padding: 10px;
     display: inline-block;
@@ -21,7 +21,7 @@
     transition-property: box-shadow;
 }
 
-.cardhover:hover {
+.card-hover:hover {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
 }
 

@@ -21,6 +21,8 @@ class ProductPres extends Component {
 
     render() {
         const {items, hasErrored, isLoading, result, totalCount} = this.props;
+        const col = window.innerWidth < 600 ? 1 : 4;
+        const nPerPage = window.innerWidth < 600 ? 15 : 60;
         if (hasErrored) {
             return (
                 <div className='container'>
@@ -38,8 +40,8 @@ class ProductPres extends Component {
         }
         return (
             <div className='container' style={{maxWidth: window.innerWidth * 2 / 3}}>
-                <GridList cols={4}>
-                    <GridListTile cols={4} style={{height: 'auto'}}>
+                <GridList cols={col}>
+                    <GridListTile cols={col} style={{height: 'auto'}}>
                         <Subheader component='div'>{totalCount} Products results: "{result}"</Subheader>
                     </GridListTile>
                     {
@@ -52,7 +54,7 @@ class ProductPres extends Component {
                         )
                     }
                 </GridList>
-                <Pagination pageNumber={this.props.pageNumber} totalCount={Math.ceil(totalCount / 60)}/>
+                <Pagination pageNumber={this.props.pageNumber} totalCount={Math.ceil(totalCount / nPerPage)}/>
                 <br/>
                 <ScrollButton scrollStepInPx="80" delayInMs="10"/>
             </div>

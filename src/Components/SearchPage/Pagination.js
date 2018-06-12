@@ -38,7 +38,22 @@ class Pagination extends React.Component {
             )
         }
         let arr = [];
-        for (let i = 1; i <= this.props.totalCount; i++) {
+        let start, end;
+        let mid = parseInt(this.props.pageNumber, 10);
+        if (this.props.totalCount < 6) {
+            start = 1;
+            end = this.props.totalCount;
+        } else if (mid <= 3) {
+            start = 1;
+            end = 6;
+        } else if (mid >= this.props.totalCount - 3) {
+            start = this.props.totalCount - 6;
+            end = this.props.totalCount;
+        } else {
+            start = mid - 2;
+            end = mid + 2;
+        }
+        for (let i = start; i <= end; i++) {
             arr.push(i);
         }
         return (

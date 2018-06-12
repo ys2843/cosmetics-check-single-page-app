@@ -1,10 +1,9 @@
-.navbarpink {
-    justify-content: flex-start;
-    padding: 0;
+.nav-bar-pink {
     background-color: lightpink;
+    padding: 0px;
 }
 
-li.navli {
+li.nav-li {
     position: relative;
     list-style-type: none;
     line-height: 1;
@@ -12,7 +11,7 @@ li.navli {
     cursor: pointer;
 }
 
-li.navli:before {
+li.nav-li:before {
     content: "";
     position: absolute;
     top: 0;
@@ -23,7 +22,7 @@ li.navli:before {
     transition: 0.2s all linear;
 }
 
-li.navli:hover::before {
+li.nav-li:hover::before {
     width: 100%;
     top: 0;
     left: 0;
@@ -31,7 +30,7 @@ li.navli:hover::before {
     border-bottom-color: #000;
 }
 
-li.navli:hover ~ li:before {
+li.nav-li:hover ~ li:before {
     left: 0;
 }
 
