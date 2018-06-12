@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f826a04f-71f0-4ebd-8d6e-c4f749a07fc8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/IngredientsCheck/IngredientsCheck.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/IngredientsCheck/IngredientsCheck.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/NavPage/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NavPage/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/NavPage/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NavPage/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/NavPage/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NavPage/NavBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/NavPage/NotFound.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NavPage/NotFound.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SearchForm/SearchForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SearchForm/SearchForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SearchPage/Pagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SearchPage/Pagination.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SearchPage/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SearchPage/Product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SearchPage/ProductContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SearchPage/ProductContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SearchPage/ProductPres.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SearchPage/ProductPres.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/css/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/css/Home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/css/Navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/css/Navbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/css/product.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/css/product.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/css/styles.css" afterDir="false" />
-    </list>
+    <list default="true" id="f826a04f-71f0-4ebd-8d6e-c4f749a07fc8" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -73,8 +56,8 @@
       <file leaf-file-name="ProductContainer.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Components/SearchPage/ProductContainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+            <state relative-caret-position="210">
+              <caret line="14" column="55" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="55" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -330,12 +313,12 @@
       <workItem from="1524175980723" duration="10601000" />
       <workItem from="1527731045868" duration="1999000" />
       <workItem from="1527778118973" duration="819000" />
-      <workItem from="1528727884945" duration="14220000" />
+      <workItem from="1528727884945" duration="15200000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="199393000" />
+    <option name="totallyTimeSpent" value="200373000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -705,8 +688,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/SearchPage/ProductContainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+        <state relative-caret-position="210">
+          <caret line="14" column="55" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="55" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
