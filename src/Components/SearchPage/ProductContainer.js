@@ -13,6 +13,7 @@ class ProductContainer extends Component {
         const nPerPage = window.innerWidth < 600 ? 15 : 60;
         if (this.props.query !== '') {
             let url = "http://54.83.169.239/api/search/" + this.props.query + '/' + this.props.pageNumber + '/' + nPerPage;
+            console.log(url);
             // let url = "http://localhost:3001/api/search/" + this.props.query + '/' + this.props.pageNumber + '/' + nPerPage;
             this.props.fetchData(url);
             let urlCount = "http://54.83.169.239/api/" + this.props.query + '/count';
